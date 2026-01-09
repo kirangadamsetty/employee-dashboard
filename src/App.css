@@ -1,0 +1,66 @@
+/* General Polish */
+body {
+  background-color: #f4f6f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img-small {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e9ecef;
+}
+
+.profile-img-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.8em;
+  border-radius: 20px;
+}
+
+/* Print Logic - Hides everything except the printable area */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .printable-area {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  /* Ensure table fits on paper */
+  table {
+    width: 100% !important;
+    font-size: 12px;
+  }
+}
