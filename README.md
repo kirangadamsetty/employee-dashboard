@@ -28,7 +28,7 @@ Email: admin@company.com
 
 Password: admin123
 
-What I Built (Features)
+Features
 
 Login Page: You can't see the dashboard unless you log in.
 
