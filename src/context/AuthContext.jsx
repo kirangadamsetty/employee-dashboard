@@ -9,7 +9,6 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check local storage for existing session
     const storedUser = localStorage.getItem('user');
     if (storedUser) {
       setUser(JSON.parse(storedUser));
@@ -18,9 +17,8 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (email, password) => {
-    // Mock Login Logic
-    if (email === "admin@company.com" && password === "admin123") {
-      const userData = { name: "HR Manager", email };
+    if (email === "bookxpert@company.com" && password === "bookxpert123") {
+      const userData = { name: "Chartered Accountant", email };
       localStorage.setItem('user', JSON.stringify(userData));
       setUser(userData);
       return true;

@@ -9,7 +9,6 @@ const EmployeeTable = ({ data }) => {
   const { deleteEmployee, toggleStatus } = useEmployees();
   const navigate = useNavigate();
   
-  // Delete Modal State
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
 
@@ -47,7 +46,7 @@ const EmployeeTable = ({ data }) => {
                         src={emp.image || "https://via.placeholder.com/40"} 
                         alt={emp.name} 
                         className="profile-img-small me-3" 
-                        onError={(e)=>{e.target.src="https://via.placeholder.com/40"}} // Fallback
+                        onError={(e)=>{e.target.src="https://via.placeholder.com/40"}} 
                       />
                       <div>
                         <div className="fw-bold text-dark">{emp.name}</div>
@@ -106,7 +105,7 @@ const EmployeeTable = ({ data }) => {
         handleClose={() => setShowModal(false)}
         handleConfirm={confirmDelete}
         title="Confirm Deletion"
-        body="Are you sure you want to delete this employee? This action cannot be undone."
+        body="Are you sure you want to delete this employee?"
       />
     </>
   );

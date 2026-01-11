@@ -6,31 +6,56 @@ import Header from '../components/Header';
 import { FiSave, FiArrowLeft, FiUpload } from 'react-icons/fi';
 
 const STATES = [
-  "California", "New York", "Texas", "Florida", "Illinois", 
-  "Pennsylvania", "Ohio", "Georgia", "North Carolina", "Michigan"
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal"
 ];
 
+
 const EmployeeForm = () => {
-  const { id } = useParams(); // If ID exists, we are in Edit mode
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const { addEmployee, editEmployee, employees } = useEmployees();
   const isEditMode = Boolean(id);
 
-  // Form State
   const [formData, setFormData] = useState({
     name: '',
     gender: '',
     dob: '',
     state: '',
     active: true,
-    image: '' // Base64 string
+    image: '' 
   });
   
   const [preview, setPreview] = useState(null);
   const [validated, setValidated] = useState(false);
   const [error, setError] = useState('');
 
-  // Load data if in Edit Mode
   useEffect(() => {
     if (isEditMode) {
       const employee = employees.find(e => e.id === parseInt(id));
@@ -43,7 +68,6 @@ const EmployeeForm = () => {
     }
   }, [id, isEditMode, employees]);
 
-  // Handle Text Inputs
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -52,11 +76,10 @@ const EmployeeForm = () => {
     }));
   };
 
-  // Handle Image Upload
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      if (file.size > 2000000) { // 2MB limit
+      if (file.size > 2000000) { 
         alert("File is too large. Please select an image under 2MB.");
         return;
       }
@@ -69,7 +92,6 @@ const EmployeeForm = () => {
     }
   };
 
-  // Submit Handler
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.currentTarget;
@@ -110,7 +132,6 @@ const EmployeeForm = () => {
               
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
-                  {/* Left Column: Image Upload */}
                   <Col md={4} className="text-center mb-4 mb-md-0">
                     <div className="mb-3">
                       <img 
@@ -145,7 +166,6 @@ const EmployeeForm = () => {
                     </Form.Group>
                   </Col>
 
-                  {/* Right Column: Details */}
                   <Col md={8}>
                     <Form.Group className="mb-3" controlId="fullName">
                       <Form.Label>Full Name</Form.Label>
@@ -225,3 +245,5 @@ const EmployeeForm = () => {
 };
 
 export default EmployeeForm;
+
+

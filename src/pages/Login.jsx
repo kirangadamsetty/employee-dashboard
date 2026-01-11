@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Card, Form, Button, Alert } from 'react-bootstrap';
 
 const Login = () => {
-  const [email, setEmail] = useState('admin@company.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('bookxpert@company.com');
+  const [password, setPassword] = useState('bookxpert123');
   const [error, setError] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Login = () => {
     if (login(email, password)) {
       navigate('/dashboard');
     } else {
-      setError('Invalid credentials. Try admin@company.com / admin123');
+      setError('Invalid credentials. Try bookxpert@company.com / bookxpert123');
     }
   };
 
@@ -58,7 +58,7 @@ const Login = () => {
             </Form>
             
             <div className="mt-3 text-center text-muted small">
-              Hint: Use <b>admin@company.com</b> and <b>admin123</b>
+              Hint: Use <b>bookxpert@company.com</b> and <b>bookxpert123</b>
             </div>
           </Card.Body>
         </Card>

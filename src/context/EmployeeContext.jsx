@@ -7,13 +7,11 @@ export const useEmployees = () => useContext(EmployeeContext);
 export const EmployeeProvider = ({ children }) => {
   const [employees, setEmployees] = useState([]);
 
-  // Load from Local Storage on mount
   useEffect(() => {
     const storedData = localStorage.getItem('employees');
     if (storedData) {
       setEmployees(JSON.parse(storedData));
     } else {
-      // Seed Initial Mock Data if empty
       const initialData = [
         { id: 1, name: "John Doe", gender: "Male", dob: "1990-05-15", state: "California", active: true, image: "https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" },
         { id: 2, name: "Jane Smith", gender: "Female", dob: "1992-08-22", state: "New York", active: true, image: "https://ui-avatars.com/api/?name=Jane+Smith&background=random" },
@@ -24,13 +22,12 @@ export const EmployeeProvider = ({ children }) => {
     }
   }, []);
 
-  // Sync to Local Storage whenever employees change
   useEffect(() => {
     localStorage.setItem('employees', JSON.stringify(employees));
   }, [employees]);
 
   const addEmployee = (employee) => {
-    const newEmployee = { ...employee, id: Date.now() }; // Simple ID generation
+    const newEmployee = { ...employee, id: Date.now() }; 
     setEmployees([...employees, newEmployee]);
   };
 

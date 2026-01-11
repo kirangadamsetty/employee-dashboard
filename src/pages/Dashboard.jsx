@@ -11,12 +11,10 @@ const Dashboard = () => {
   const { employees } = useEmployees();
   const navigate = useNavigate();
 
-  // Filter States
   const [searchTerm, setSearchTerm] = useState('');
   const [filterGender, setFilterGender] = useState('');
   const [filterStatus, setFilterStatus] = useState('');
 
-  // Derived Statistics (Auto-updates when employees change)
   const stats = useMemo(() => {
     return {
       total: employees.length,
@@ -25,17 +23,15 @@ const Dashboard = () => {
     };
   }, [employees]);
 
-  // Combined Filtering Logic
   const filteredData = useMemo(() => {
     return employees.filter(emp => {
       const matchesSearch = emp.name.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesGender = filterGender ? emp.gender === filterGender : true;
-      const matchesStatus = filterStatus ? String(emp.active) === filterStatus : true;
-      
+      const matchesStatus = filterStatus ? String(emp.active) === filterStatus : true;      
       return matchesSearch && matchesGender && matchesStatus;
     });
   }, [employees, searchTerm, filterGender, filterStatus]);
-
+  
   const handlePrint = () => {
     window.print();
   };
@@ -44,14 +40,12 @@ const Dashboard = () => {
     <>
       <Header />
       <Container className="pb-5">
-        {/* Statistics Section - No Print */}
         <Row className="mb-4 no-print">
           <StatsCard title="Total Employees" count={stats.total} icon={<FiUsers />} color="primary" />
           <StatsCard title="Active Employees" count={stats.active} icon={<FiUserCheck />} color="success" />
           <StatsCard title="Inactive Employees" count={stats.inactive} icon={<FiUserX />} color="secondary" />
         </Row>
 
-        {/* Action Bar - No Print */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm no-print gap-3">
           <h4 className="fw-bold mb-0">Employee List</h4>
           <div className="d-flex gap-2">
@@ -64,7 +58,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Filters - No Print */}
         <div className="row g-3 mb-4 no-print">
           <div className="col-md-4">
             <InputGroup>
@@ -94,7 +87,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Printable Area Wrapper */}
         <div className="printable-area">
           <EmployeeTable data={filteredData} />
         </div>

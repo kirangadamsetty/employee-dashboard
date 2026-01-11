@@ -6,7 +6,6 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import EmployeeForm from './pages/EmployeeForm';
 
-// Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth();
   if (loading) return <div>Loading...</div>;
@@ -40,7 +39,6 @@ function App() {
               </ProtectedRoute>
             } />
             
-            {/* Redirect any unknown route to dashboard or login */}
             <Route path="*" element={<Navigate to="/dashboard" replace />} />
           </Routes>
         </EmployeeProvider>

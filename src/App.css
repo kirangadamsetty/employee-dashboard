@@ -1,4 +1,3 @@
-/* General Polish */
 body {
   background-color: #f4f6f9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,7 +41,6 @@ body {
   border-radius: 20px;
 }
 
-/* Print Logic - Hides everything except the printable area */
 @media print {
   .no-print {
     display: none !important;
@@ -58,7 +56,6 @@ body {
     box-shadow: none;
     border: 1px solid #ddd;
   }
-  /* Ensure table fits on paper */
   table {
     width: 100% !important;
     font-size: 12px;
