@@ -172,7 +172,7 @@ const EmployeeForm = () => {
                       <Form.Control 
                         required 
                         type="text" 
-                        placeholder="e.g. John Doe"
+                        placeholder="e.g. Kiran"
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
