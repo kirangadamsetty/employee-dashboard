@@ -13,9 +13,9 @@ export const EmployeeProvider = ({ children }) => {
       setEmployees(JSON.parse(storedData));
     } else {
       const initialData = [
-        { id: 1, name: "Kiran", gender: "Male", dob: "1990-05-15", state: "Telangan", active: true, image: "https://ui-avatars.com/api/?name=John+Doe&background=0D8ABC&color=fff" },
-        { id: 2, name: "Anil", gender: "Female", dob: "1992-08-22", state: "Andhra Pradesh", active: true, image: "https://ui-avatars.com/api/?name=Jane+Smith&background=random" },
-        { id: 3, name: "Ram", gender: "Male", dob: "1985-11-30", state: "Kerala", active: false, image: "https://ui-avatars.com/api/?name=Robert+Brown&background=random" }
+        { id: 1, name: "Kiran", gender: "Male", dob: "1990-05-15", state: "Telangan", active: true, image: "https://ui-avatars.com/api/?name=kiran&background=0D8ABC&color=fff" },
+        { id: 2, name: "Anil", gender: "Female", dob: "1992-08-22", state: "Andhra Pradesh", active: true, image: "https://ui-avatars.com/api/?name=Anil&background=random" },
+        { id: 3, name: "Ram", gender: "Male", dob: "1985-11-30", state: "Kerala", active: false, image: "https://ui-avatars.com/api/?name=Ram&background=random" }
       ];
       setEmployees(initialData);
       localStorage.setItem('employees', JSON.stringify(initialData));
