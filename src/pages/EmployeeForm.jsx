@@ -48,7 +48,7 @@ const EmployeeForm = () => {
     gender: '',
     dob: '',
     state: '',
-    active: true,
+    active: true,                               
     image: '' 
   });
   

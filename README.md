@@ -24,9 +24,9 @@ Login Details
 
 I set up a mock login system. You can use these credentials to get in:
 
-Email: admin@company.com
+Email: bookxpert@company.com
 
-Password: admin123
+Password: bookxpert123
 
 Features
 

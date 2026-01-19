@@ -11,7 +11,7 @@ const EmployeeTable = ({ data }) => {
   
   const [showModal, setShowModal] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-
+   
   const handleDeleteClick = (id) => {
     setSelectedId(id);
     setShowModal(true);

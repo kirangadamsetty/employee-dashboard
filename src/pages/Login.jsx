@@ -18,7 +18,6 @@ const Login = () => {
       setError('Invalid credentials. Try bookxpert@company.com / bookxpert123');
     }
   };
-
   return (
     <div className="d-flex align-items-center justify-content-center min-vh-100 bg-light">
       <Container style={{ maxWidth: '400px' }}>
@@ -66,5 +65,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;
